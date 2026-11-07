@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UAV Arena — autonomous UAVs compete on real autopilots</title>
+<meta name="description" content="UAV Arena is a virtual competition platform where autonomous fixed-wing UAVs fly on real ArduPilot autopilots and an automatic referee scores lock-ons, a QR dive, no-fly zones and landing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="UAV Arena — autonomous UAVs compete on real autopilots">
+<meta property="og:description" content="A virtual arena where autonomous fixed-wing UAVs fly on real ArduPilot autopilots and an automatic referee scores every lock-on, dive and landing. Free practice league for university teams from January 2027.">
+<meta property="og:image" content="https://amro2021.github.io/uavarena.github.io/assets/social-card.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a href="./">UAV Arena</a>
+    <nav aria-label="Main">
+      <a href="#match">How a match works</a>
+      <a href="#uses">Who it's for</a>
+      <a href="#companies">For companies</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Autonomous UAVs, real autopilots, one arena.</h1>
+        <p class="lede">UAV Arena is a virtual competition where every aircraft runs real ArduPlane autopilot software and is commanded over MAVLink, exactly as on a real airframe. An automatic referee scores every lock-on, dive and landing, live. Teams test their autonomy code against real opponents without risking an aircraft.</p>
+        <div class="actions">
+          <a class="btn primary" href="#join">Join the January league</a>
+          <a class="btn" href="#match">How a match works</a>
+        </div>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 600 460" role="img" aria-label="Map of the arena: a geofence, two no-fly zones, a QR pad, a landing zone, and two aircraft circling while one locks on to the other">
+          <defs>
+            <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="10" stroke="#a8306a" stroke-width="2" stroke-opacity="0.5"/>
+            </pattern>
+          </defs>
+          <!-- geofence -->
+          <rect x="40" y="30" width="520" height="400" rx="6" fill="#eef2ec" stroke="#a8306a" stroke-width="3" stroke-dasharray="14 8"/>
+          <!-- no-fly zones -->
+          <circle cx="140" cy="120" r="48" fill="url(#hatch)" stroke="#a8306a" stroke-width="2"/>
+          <polygon points="440,320 520,300 530,390 450,400" fill="url(#hatch)" stroke="#a8306a" stroke-width="2"/>
+          <!-- landing zone -->
+          <rect x="90" y="360" width="150" height="34" rx="3" fill="#2f5d9e" fill-opacity="0.12" stroke="#2f5d9e" stroke-width="2"/>
+          <line x1="105" y1="377" x2="225" y2="377" stroke="#2f5d9e" stroke-width="2" stroke-dasharray="10 8"/>
+          <!-- QR pad -->
+          <g transform="translate(470 70)">
+            <rect width="44" height="44" fill="#fff" stroke="#1c2b4a" stroke-width="2"/>
+            <rect x="5" y="5" width="12" height="12" fill="#1c2b4a"/><rect x="27" y="5" width="12" height="12" fill="#1c2b4a"/>
+            <rect x="5" y="27" width="12" height="12" fill="#1c2b4a"/><rect x="24" y="24" width="6" height="6" fill="#1c2b4a"/><rect x="32" y="32" width="7" height="7" fill="#1c2b4a"/>
+          </g>
+          <!-- orbit track -->
+          <circle cx="300" cy="230" r="120" fill="none" stroke="#1c2b4a" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 6"/>
+          <!-- both aircraft circle together; the trailing hunter locks on -->
+          <g class="orbit">
+            <g class="lock"><polygon points="215,145 314,98 300,130" fill="#a8306a" fill-opacity="0.2" stroke="#a8306a" stroke-width="1.5"/></g>
+            <g transform="translate(300 110) rotate(90)"><path d="M0 -14 L4 -2 L16 4 L4 4 L3 12 L7 15 L-7 15 L-3 12 L-4 4 L-16 4 L-4 -2 Z" fill="#2f5d9e"/></g>
+            <g transform="translate(215 145) rotate(45)"><path d="M0 -14 L4 -2 L16 4 L4 4 L3 12 L7 15 L-7 15 L-3 12 L-4 4 L-16 4 L-4 -2 Z" fill="#1c2b4a"/></g>
+          </g>
+          <g font-family="Barlow Semi Condensed, sans-serif" font-size="15" font-weight="600">
+            <text x="100" y="186" fill="#a8306a">No-fly zone</text>
+            <text x="452" y="134" fill="#1c2b4a">QR pad</text>
+            <text x="92" y="352" fill="#2f5d9e">Landing zone</text>
+            <text x="404" y="56" fill="#a8306a">Geofence</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <section class="block" id="match">
+      <h2>How a match works</h2>
+      <ol class="sequence">
+        <li><h3>Take off</h3><p>Each team's aircraft takes off within the take-off window, flown by the team's own code or by a pilot with a ground station.</p></li>
+        <li><h3>Lock on</h3><p>Hold an opponent inside your camera's hit zone for 4 seconds. The referee checks every claim against ground truth.</p></li>
+        <li><h3>Dive for the QR code</h3><p>Dive at the ground pad and read its QR code to complete the dive task.</p></li>
+        <li><h3>Land</h3><p>Land in the landing zone before time runs out. Geofence breaches, no-fly zones and unsafe flying cost points.</p></li>
+      </ol>
+    </section>
+
+    <section class="block">
+      <div class="split">
+        <h2>Under the hood</h2>
+        <ul class="plain">
+          <li>Every aircraft is a real ArduPlane autopilot (ArduPilot SITL), commanded over MAVLink</li>
+          <li>An automatic referee validates lock-ons: camera projection, hit zone, hold time and gaps</li>
+          <li>Live penalties for geofence, no-fly zones, unsafe proximity, telemetry loss and false claims</li>
+          <li>3D view in Gazebo, plus a web dashboard with scoreboard and referee console</li>
+          <li>Teams join from their own laptops over the network, or fly by hand with Mission Planner</li>
+          <li>Rules live in one configuration file, so formats can change without code changes</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="split">
+        <h2>What test matches taught us</h2>
+        <div class="lessons">
+          <blockquote><strong>Deconfliction comes before tactics.</strong>Two aircraft running identical code collided 24 seconds after take-off.</blockquote>
+          <blockquote><strong>Aim past the target.</strong>A guided dive failed on every pass until the aim point was moved beyond the QR pad; then every team read the code on its first dive.</blockquote>
+          <blockquote><strong>Stagger the landings.</strong>Two aircraft returning at the same moment met on final approach.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="uses">
+      <h2>Who it's for</h2>
+      <div class="uses">
+        <div class="lead">
+          <h3>Competition teams</h3>
+          <p>Practise against real opponents months before a flight test. Built around the Fighting UAV competition format.</p>
+        </div>
+        <div>
+          <h3>Universities and leagues</h3>
+          <p>Run courses, internal team selection or a full league on one platform, with automatic scoring and replays.</p>
+        </div>
+        <div>
+          <h3>Companies</h3>
+          <p>Test multi-aircraft autonomy software against standard scenarios before risking an airframe.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="companies">
+      <div class="split">
+        <h2>For companies</h2>
+        <div>
+          <p>Testing several autonomous aircraft together on real hardware is slow, expensive and risky. UAV Arena runs the same autopilot software in a shared virtual airspace, with automatic scoring and full logs of every flight.</p>
+          <ul class="plain">
+            <li><strong>Test your autonomy code</strong> against standard multi-aircraft scenarios before a flight test</li>
+            <li><strong>Run a hiring challenge</strong> for interns and graduates, under your own brand</li>
+            <li><strong>Train new engineers</strong> on MAVLink, ArduPilot and multi-aircraft operations without hardware</li>
+            <li><strong>Run it on your own network</strong>, with your aircraft models and closed scenarios (in development)</li>
+          </ul>
+          <div class="actions">
+            <a class="btn" href="https://github.com/amro2021/uavarena.github.io/issues/new?template=company-inquiry.yml">Ask about a pilot project</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="coming">
+      <div class="split">
+        <h2>What's coming</h2>
+        <ul class="plain">
+          <li><strong>January 2027</strong> — free practice league for university teams</li>
+          <li><strong>Spring 2027</strong> — ground radar with tracking, GPS jamming zones, and a degraded radio link as optional season modules</li>
+          <li><strong>Summer 2027</strong> — a real aircraft flying in the virtual arena, and an AI opponent to train against</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="block" id="join">
+      <div class="split">
+        <h2>Join the first league</h2>
+        <div>
+          <p>A free virtual practice league for university UAV teams starts in January 2027. Teams use their own autonomy code, or start from the provided starter team. Registration takes two minutes with a GitHub account.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://github.com/amro2021/uavarena.github.io/issues/new?template=register-team.yml">Register your team</a>
+          </div>
+          <p class="note" style="margin-top:22px">UAV Arena is an independent project inspired by the Fighting UAV (Savaşan İHA) competition format. It is not affiliated with or endorsed by TEKNOFEST or its organizers.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<footer><div class="wrap">© 2026 UAV Arena. Built by Amr Abdelbari</div></footer>
+</body>
+</html>

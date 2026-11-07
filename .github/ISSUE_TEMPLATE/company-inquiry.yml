@@ -1,0 +1,33 @@
+name: Company inquiry
+description: Ask about a pilot project, a hiring challenge or training on UAV Arena
+title: "Company inquiry: "
+labels: ["company"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is public. Share only what you're comfortable having visible; we'll continue privately once we're in touch.
+  - type: input
+    id: company
+    attributes:
+      label: Company
+    validations:
+      required: true
+  - type: dropdown
+    id: interest
+    attributes:
+      label: What are you interested in?
+      multiple: true
+      options: ["Testing autonomy software", "Hiring challenge", "Training engineers", "Running it on our own network", "Sponsorship", "Something else"]
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Anything we should know?
+  - type: input
+    id: contact
+    attributes:
+      label: How should we reach you? (LinkedIn or a public email)
+    validations:
+      required: true
