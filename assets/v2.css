@@ -223,3 +223,7 @@ footer .langs [aria-current] { color: #fff; font-weight: 600; border-bottom: 2px
 @media (max-width: 620px) {
   [dir="rtl"] .lang-mini { padding-right: 0; border-right: 0; }
 }
+:lang(ar) .eyebrow, :lang(ar) .footage-tag, :lang(ar) .media .cap:not([dir="ltr"]) {
+  font-family: "IBM Plex Sans Arabic", sans-serif; letter-spacing: 0; text-transform: none; font-size: 0.9rem;
+}
+[dir="rtl"] .stat b small { margin-left: 0; margin-right: 6px; }

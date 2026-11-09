@@ -7,8 +7,8 @@
 <meta name="description" content="UAV Arena منصة مسابقات افتراضية تطير فيها طائرات مسيّرة ذاتية القيادة ثابتة الجناح بطيارات آلية ArduPilot حقيقية، ويحتسب فيها حَكَم آلي نقاط الإقفال على الهدف والانقضاض على رمز QR ومناطق حظر الطيران والهبوط.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/v2.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="en" href="https://uavarena.github.io/">
 <link rel="alternate" hreflang="tr" href="https://uavarena.github.io/tr/">
@@ -16,164 +16,218 @@
 <link rel="alternate" hreflang="x-default" href="https://uavarena.github.io/">
 <meta property="og:title" content="UAV Arena — طائرات مسيّرة ذاتية القيادة تتنافس بطيارات آلية حقيقية">
 <meta property="og:description" content="ساحة افتراضية تطير فيها طائرات مسيّرة ذاتية القيادة بطيارات آلية ArduPilot حقيقية، ويحتسب حَكَم آلي كل إقفال وانقضاض وهبوط. دوري تدريبي مجاني لفرق الجامعات يبدأ في يناير 2027.">
-<meta property="og:image" content="https://uavarena.github.io/assets/social-card.png">
+<meta property="og:image" content="https://uavarena.github.io/assets/media/hero-poster.jpg">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<div class="wrap">
-  <header class="bar">
-    <a href="./">UAV Arena</a>
-    <nav aria-label="القائمة الرئيسية">
-      <a href="#match">كيف تجري المباراة</a>
-      <a href="#uses">لمن هذه المنصة</a>
-      <a href="#companies">للشركات</a>
-      <a href="#join">انضم</a>
-      <a href="../" hreflang="en" lang="en" dir="ltr">English</a>
-      <a href="../tr/" hreflang="tr" lang="tr" dir="ltr">Türkçe</a>
-    </nav>
-  </header>
 
-  <main>
-    <div class="hero">
-      <div>
-        <h1>طائرات مسيّرة ذاتية، طيارات آلية حقيقية، ساحة واحدة.</h1>
-        <p class="lede"><span dir="ltr">UAV Arena</span> مسابقة افتراضية تعمل فيها كل طائرة ببرنامج الطيار الآلي ArduPlane الحقيقي، وتتلقى أوامرها عبر بروتوكول MAVLink تمامًا كما على طائرة حقيقية. يحتسب حَكَم آلي نقاط كل إقفال وانقضاض وهبوط مباشرةً. تختبر الفرق برمجيات القيادة الذاتية الخاصة بها أمام منافسين حقيقيين دون المخاطرة بأي طائرة.</p>
-        <div class="actions">
-          <a class="btn primary" href="#join">انضم إلى دوري يناير</a>
-          <a class="btn" href="#match">كيف تجري المباراة</a>
-        </div>
-      </div>
-      <div class="chart">
-        <svg dir="ltr" viewBox="0 0 600 460" role="img" aria-label="خريطة الساحة: سياج جغرافي، ومنطقتا حظر طيران، ومنصة رمز QR، ومنطقة هبوط، وطائرتان تدوران بينما تُقفل إحداهما على الأخرى">
-          <defs>
-            <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="10" stroke="#a8306a" stroke-width="2" stroke-opacity="0.5"/>
-            </pattern>
-          </defs>
-          <rect x="40" y="30" width="520" height="400" rx="6" fill="#eef2ec" stroke="#a8306a" stroke-width="3" stroke-dasharray="14 8"/>
-          <circle cx="140" cy="120" r="48" fill="url(#hatch)" stroke="#a8306a" stroke-width="2"/>
-          <polygon points="440,320 520,300 530,390 450,400" fill="url(#hatch)" stroke="#a8306a" stroke-width="2"/>
-          <rect x="90" y="360" width="150" height="34" rx="3" fill="#2f5d9e" fill-opacity="0.12" stroke="#2f5d9e" stroke-width="2"/>
-          <line x1="105" y1="377" x2="225" y2="377" stroke="#2f5d9e" stroke-width="2" stroke-dasharray="10 8"/>
-          <g transform="translate(470 70)">
-            <rect width="44" height="44" fill="#fff" stroke="#1c2b4a" stroke-width="2"/>
-            <rect x="5" y="5" width="12" height="12" fill="#1c2b4a"/><rect x="27" y="5" width="12" height="12" fill="#1c2b4a"/>
-            <rect x="5" y="27" width="12" height="12" fill="#1c2b4a"/><rect x="24" y="24" width="6" height="6" fill="#1c2b4a"/><rect x="32" y="32" width="7" height="7" fill="#1c2b4a"/>
-          </g>
-          <circle cx="300" cy="230" r="120" fill="none" stroke="#1c2b4a" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 6"/>
-          <g class="orbit">
-            <g class="lock"><polygon points="215,145 314,98 300,130" fill="#a8306a" fill-opacity="0.2" stroke="#a8306a" stroke-width="1.5"/></g>
-            <g transform="translate(300 110) rotate(90)"><path d="M0 -14 L4 -2 L16 4 L4 4 L3 12 L7 15 L-7 15 L-3 12 L-4 4 L-16 4 L-4 -2 Z" fill="#2f5d9e"/></g>
-            <g transform="translate(215 145) rotate(45)"><path d="M0 -14 L4 -2 L16 4 L4 4 L3 12 L7 15 L-7 15 L-3 12 L-4 4 L-16 4 L-4 -2 Z" fill="#1c2b4a"/></g>
-          </g>
-          <g font-family="IBM Plex Sans Arabic, sans-serif" font-size="15" font-weight="600" text-anchor="middle">
-            <text x="140" y="190" fill="#a8306a">منطقة حظر طيران</text>
-            <text x="492" y="134" fill="#1c2b4a">منصة QR</text>
-            <text x="165" y="352" fill="#2f5d9e">منطقة الهبوط</text>
-            <text x="470" y="56" fill="#a8306a">السياج الجغرافي</text>
-          </g>
-        </svg>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./" lang="en" dir="ltr">
+      <svg viewBox="-18 -18 36 36" aria-hidden="true"><circle r="16" fill="none" stroke="#4fd1e8" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M0 -12 L3.5 -1.5 L13 3.5 L3.5 3.5 L2.5 10 L6 12.5 L-6 12.5 L-2.5 10 L-3.5 3.5 L-13 3.5 L-3.5 -1.5 Z" fill="#fff"/></svg>
+      UAV Arena
+    </a>
+    <nav aria-label="القائمة الرئيسية">
+      <a class="hide-m" href="#match">كيف تعمل</a>
+      <a class="hide-m" href="#footage">المشاهد</a>
+      <a class="hide-m" href="#companies">للشركات</a>
+      <a class="cta" href="#join">انضم إلى الدوري</a>
+      <span class="lang-mini"><a href="../" hreflang="en" lang="en">EN</a><a href="../tr/" hreflang="tr" lang="tr">TR</a><span aria-current="page">عربي</span></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <img class="poster" src="../assets/media/hero-poster.jpg" alt="">
+    <video autoplay muted loop playsinline preload="auto" poster="../assets/media/hero-poster.jpg" aria-hidden="true">
+      <source src="../assets/media/hero.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <div class="eyebrow">ساحة افتراضية للاشتباك بين الطائرات المسيّرة</div>
+      <h1>طائرات مسيّرة ذاتية. <em>طيارات آلية حقيقية.</em> ساحة واحدة.</h1>
+      <p class="lede">تعمل كل طائرة ببرنامج الطيار الآلي ArduPlane الحقيقي، وتتلقى أوامرها عبر بروتوكول MAVLink تمامًا كما على طائرة حقيقية. يحتسب حَكَم آلي نقاط كل إقفال وانقضاض وهبوط مباشرةً. اختبر برمجيات القيادة الذاتية أمام منافسين حقيقيين دون المخاطرة بأي طائرة.</p>
+      <div class="actions">
+        <a class="btn primary" href="#join">انضم إلى دوري يناير <span class="arrow">→</span></a>
+        <a class="btn" href="#footage">شاهد المشاهد</a>
       </div>
     </div>
+    <div class="footage-tag"><span class="dot"></span>مشاهد حقيقية من مباراة · 4 فرق · حَكَم مباشر</div>
+  </div>
 
-    <section class="block" id="match">
-      <h2>كيف تجري المباراة</h2>
-      <ol class="sequence">
-        <li><h3>الإقلاع</h3><p>تُقلع طائرة كل فريق خلال نافذة الإقلاع، ويقودها برنامج الفريق نفسه أو طيار عبر محطة تحكم أرضية.</p></li>
-        <li><h3>الإقفال على الهدف</h3><p>أبقِ طائرة الخصم داخل منطقة الإصابة في كاميرتك مدة 4 ثوانٍ. يتحقق الحَكَم من كل ادعاء بمقارنته بالمواقع الفعلية.</p></li>
-        <li><h3>الانقضاض على رمز QR</h3><p>انقضّ على المنصة الأرضية واقرأ رمز QR لإتمام مهمة الانقضاض.</p></li>
-        <li><h3>الهبوط</h3><p>اهبط في منطقة الهبوط قبل انتهاء الوقت. يُخصم من النقاط عند تجاوز السياج الجغرافي أو دخول مناطق حظر الطيران أو الطيران غير الآمن.</p></li>
-      </ol>
-    </section>
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>100<small>فريق</small></b><span>في مباراة واحدة، مقيسة على خادم الساحة</span></div>
+      <div class="stat"><b>4<small>ثوانٍ</small></b><span>لإبقاء الهدف من أجل إقفال صحيح</span></div>
+      <div class="stat"><b>2</b><span>طياران آليان مدعومان: ArduPilot وPX4</span></div>
+      <div class="stat"><b>يناير<small>2027</small></b><span>أول دوري مجاني لفرق الجامعات</span></div>
+    </div>
+  </div>
 
-    <section class="block">
-      <div class="split">
-        <h2>البنية التقنية</h2>
-        <ul class="plain">
-          <li>كل طائرة طيار آلي ArduPlane حقيقي (ArduPilot SITL) يتلقى أوامره عبر MAVLink</li>
-          <li>يتحقق الحَكَم الآلي من عمليات الإقفال: إسقاط الكاميرا، ومنطقة الإصابة، ومدة الإبقاء، والانقطاعات</li>
-          <li>عقوبات مباشرة على تجاوز السياج الجغرافي، ودخول مناطق حظر الطيران، والاقتراب غير الآمن، وفقدان القياس عن بُعد، والادعاءات الخاطئة</li>
-          <li>عرض ثلاثي الأبعاد في Gazebo، ولوحة ويب فيها جدول النقاط ووحدة تحكم الحَكَم</li>
-          <li>تنضم الفرق من حواسيبها المحمولة عبر الشبكة، أو تطير يدويًا باستخدام Mission Planner</li>
-          <li>القواعد محفوظة في ملف إعدادات واحد، فيمكن تغيير صيغة المسابقة دون تعديل الشيفرة</li>
+  <section id="match">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">كيف تجري المباراة</div>
+        <h2>خمس عشرة دقيقة. أربع مهام. حَكَم لا يرحم.</h2>
+        <p>النقاط أدناه من القواعد القياسية. القواعد كلها في ملف إعدادات واحد، فيمكن للدوريات تغيير الصيغة دون تعديل الشيفرة.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>الإقلاع</h3><p>تُقلع كل طائرة خلال نافذة الإقلاع، ويقودها برنامج الفريق أو طيار من قمرة القيادة ثلاثية الأبعاد.</p></div>
+        <div class="step reveal"><span class="pts" dir="ltr">+10</span><h3>الإقفال على الهدف</h3><p>أبقِ طائرة الخصم داخل منطقة الإصابة في كاميرتك مدة 4 ثوانٍ. يخسر الفريق المُقفَل عليه نقطتين.</p></div>
+        <div class="step reveal"><span class="pts" dir="ltr">+25</span><h3>الانقضاض على QR</h3><p>انقضّ على المنصة الأرضية واقرأ رمز QR من صورة الكاميرا.</p></div>
+        <div class="step reveal"><span class="pts" dir="ltr">+5</span><h3>الهبوط</h3><p>اهبط بأمان في منطقة الهبوط قبل انتهاء الوقت. تجاوز السياج الجغرافي ومناطق حظر الطيران والطيران غير الآمن تُكلّف نقاطًا.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="referee">
+    <div class="wrap feature">
+      <div class="media reveal">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/media/lockon-poster.jpg" aria-label="مقطع إثبات إقفال: فريق Sahin يُبقي فريق Atmaca داخل منطقة الإصابة الصفراء، والحَكَم يعتمده">
+          <source src="../assets/media/lockon.mp4" type="video/mp4">
+        </video>
+        <span class="cap" dir="ltr">REFEREE EVIDENCE · T3 → T4 · VALID +10</span>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">الحَكَم الآلي</div>
+        <h2>كل إقفال يُتحقَّق منه مقابل المواقع الفعلية.</h2>
+        <p>تُرسَم كاميرا كل طائرة الأمامية صورًا حقيقية تُبث لفريقها وحده. وعندما يدّعي فريق إقفالًا، يعيد الحَكَم حساب إسقاط الكاميرا ومنطقة الإصابة ومدة الإبقاء، ويحتفظ بمقطع إثبات قصير مثل هذا.</p>
+        <ul class="checks">
+          <li>التحقق من إسقاط الكاميرا ومنطقة الإصابة ومدة الإبقاء والانقطاعات</li>
+          <li>عقوبات مباشرة على تجاوز السياج الجغرافي ومناطق حظر الطيران والاقتراب غير الآمن والادعاءات الخاطئة</li>
+          <li>تسجيل كل رسالة قياس عن بُعد وكل ادعاء وكل قرار لإعادة العرض</li>
         </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="block">
-      <div class="split">
-        <h2>ما تعلّمناه من المباريات التجريبية</h2>
-        <div class="lessons">
-          <blockquote><strong>تجنّب التصادم قبل التكتيك.</strong>اصطدمت طائرتان تعملان بالشيفرة نفسها بعد 24 ثانية من الإقلاع.</blockquote>
-          <blockquote><strong>صوّب إلى ما بعد الهدف.</strong>فشل الانقضاض الموجَّه في كل محاولة حتى نُقلت نقطة التصويب إلى ما بعد منصة QR، فقرأ كل فريق الرمز من أول انقضاض.</blockquote>
-          <blockquote><strong>باعِد بين أوقات الهبوط.</strong>التقت طائرتان عادتا في اللحظة نفسها على مسار الاقتراب النهائي.</blockquote>
-        </div>
+  <section id="footage">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">المشاهد</div>
+        <h2>شاهد المباراة من كل زاوية.</h2>
+        <p>كل الصور في هذه الصفحة من مباريات حقيقية في UAV Arena. لم يُصمَّم أي منها أو يُجهَّز لأغراض الدعاية.</p>
       </div>
-    </section>
+      <div class="gallery">
+        <figure class="wide reveal">
+          <div class="media"><video autoplay muted loop playsinline preload="metadata" poster="../assets/media/chase-poster.jpg"><source src="../assets/media/chase.mp4" type="video/mp4"></video><span class="cap">عرض ثلاثي الأبعاد · كاميرا المطاردة</span></div>
+          <figcaption><b>عرض المشاهدين ثلاثي الأبعاد.</b> يتابع الضيوف أي طائرة من الهاتف أو الحاسوب برابط واحد.</figcaption>
+        </figure>
+        <figure class="narrow reveal">
+          <div class="media"><img src="../assets/media/onboard-camera.jpg" alt="صورة كاميرا طائرة: السماء والأفق والحلقة الحمراء لمنطقة الانقضاض على QR" loading="lazy"><span class="cap">كاميرا الطائرة</span></div>
+          <figcaption><b>كاميرا الطائرة.</b> ما يراه نظام الكشف لدى الفريق فعلًا.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="media"><img src="../assets/media/arena-overview.jpg" alt="منظر عام ثلاثي الأبعاد للساحة: السياج الجغرافي وأسطوانتا حظر الطيران والمدرج وأربع طائرات" loading="lazy"><span class="cap">منظر عام للساحة</span></div>
+          <figcaption><b>الساحة.</b> السياج الجغرافي ومناطق حظر الطيران ومنصة QR ومنطقة الهبوط.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="media"><img src="../assets/media/dashboard.jpg" alt="لوحة الويب: خريطة الساحة بأربع طائرات وجدول النقاط وسجل الأحداث" loading="lazy"><span class="cap">لوحة الحَكَم</span></div>
+          <figcaption><b>اللوحة.</b> خريطة مباشرة وجدول النقاط وكل قرارات الحَكَم.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="uses">
-      <h2>لمن هذه المنصة</h2>
-      <div class="uses">
-        <div class="lead">
-          <h3>فرق المسابقات</h3>
-          <p>تدرّب أمام منافسين حقيقيين قبل اختبار الطيران بأشهر. صُممت المنصة على صيغة مسابقة الطائرات المسيّرة المقاتلة.</p>
-        </div>
-        <div>
-          <h3>الجامعات والدوريات</h3>
-          <p>أدِر مقررات دراسية أو تصفيات داخلية للفرق أو دوريًا كاملًا على منصة واحدة، مع احتساب آلي للنقاط وإعادة عرض المباريات.</p>
-        </div>
-        <div>
-          <h3>الشركات</h3>
-          <p>اختبر برمجيات القيادة الذاتية متعددة الطائرات في سيناريوهات قياسية قبل المخاطرة بأي طائرة.</p>
-        </div>
+  <section class="alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">البنية التقنية</div>
+        <h2>البرنامج نفسه الذي يقود الطائرة الحقيقية.</h2>
       </div>
-    </section>
+      <div class="grid3">
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></div><h3>طيارات آلية حقيقية</h3><p>ArduPilot SITL لكل طائرة، وPX4 إلى جانبه، مع أوامر عبر MAVLink.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div><h3>كاميرات بصور حقيقية</h3><p>صور حقيقية لكل طائرة تُبث بصيغة MJPEG لكل فريق من أجل نظام الكشف الخاص به.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 16V9m5 7V5m5 11v-4"/></svg></div><h3>إعادة العرض</h3><p>إعادة عرض كل مباراة بثلاثة أبعاد مع خط زمني وأحداث وسرعة من 1 إلى 32 ضعفًا.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>لعب نظيف</h3><p>رموز دخول لكل فريق وبوابة للطيار الآلي تمنع الأوامر المحظورة وتسجّل كل شيء.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>قمرة قيادة ثلاثية الأبعاد</h3><p>طِر يدويًا من المتصفح بلوحة المفاتيح أو ذراع التحكم، أو باستخدام Mission Planner.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>مصممة للتوسع</h3><p>100 فريق في مباراة واحدة، ولكل فريق قياس عن بُعد كامل بتردد 5 هرتز؛ مقيس فعلًا.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="companies">
-      <div class="split">
-        <h2>للشركات</h2>
-        <div>
-          <p>اختبار عدة طائرات ذاتية القيادة معًا على عتاد حقيقي بطيء ومكلف ومحفوف بالمخاطر. تشغّل <span dir="ltr">UAV Arena</span> برنامج الطيار الآلي نفسه في مجال جوي افتراضي مشترك، مع احتساب آلي للنقاط وسجلات كاملة لكل رحلة.</p>
-          <ul class="plain">
-            <li><strong>اختبر برمجيات القيادة الذاتية</strong> في سيناريوهات قياسية متعددة الطائرات قبل اختبار الطيران</li>
-            <li><strong>نظّم مسابقة توظيف</strong> للمتدربين والخريجين الجدد، تحت علامتك التجارية</li>
-            <li><strong>درّب المهندسين الجدد</strong> على MAVLink وArduPilot وعمليات الطائرات المتعددة دون عتاد</li>
-            <li><strong>شغّلها على شبكتك الخاصة</strong> بنماذج طائراتك وسيناريوهاتك المغلقة (قيد التطوير)</li>
-          </ul>
-          <div class="actions">
-            <a class="btn" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=company-inquiry.yml">استفسر عن مشروع تجريبي</a>
-          </div>
-        </div>
+  <section id="modules">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">وحدات الموسم</div>
+        <h2>أبعد من صيغة المسابقة.</h2>
+        <p>وحدات اختيارية للدوريات التي تريد حربًا إلكترونية في الجو. يمكن تشغيل كل وحدة أو إيقافها في كل موسم.</p>
       </div>
-    </section>
+      <div class="modules reveal">
+        <div><h3>رادار أرضي</h3><p>ضوضاء وتشويش أرضي وأفق راداري ونظام تتبّع؛ والمسارات متاحة للفرق.</p></div>
+        <div><h3>مواقع دفاع جوي مخفية</h3><p>تتبّع، إقفال، إطلاق. وللفرق جهاز إنذار راداري لتنجو.</p></div>
+        <div><h3>تشويش GPS وخداعه</h3><p>مناطق يكذب فيها الموقع؛ واكتشاف ذلك مهمة الفريق.</p></div>
+        <div><h3>تشويش الاتصالات</h3><p>تأخير وفقد وتذبذب لكل فريق، ومناطق تشويش على الوصلة.</p></div>
+        <div><h3>مُشوِّش للحماية الذاتية</h3><p>تدابير إلكترونية مضادة بميزانية وفترة انتظار، فاستخدمها بحكمة.</p></div>
+        <div><h3>ضباب الحرب</h3><p>لا مواقع مجانية للخصوم: اعثر عليهم بالرادار والكاميرا.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="coming">
-      <div class="split">
-        <h2>ما هو قادم</h2>
-        <ul class="plain">
-          <li><strong>يناير 2027</strong> — دوري تدريبي مجاني لفرق الجامعات</li>
-          <li><strong>ربيع 2027</strong> — رادار أرضي مع تتبّع، ومناطق تشويش على GPS، ووصلة لاسلكية متدهورة، كوحدات اختيارية للموسم</li>
-          <li><strong>صيف 2027</strong> — طائرة حقيقية تطير داخل الساحة الافتراضية، وخصم بالذكاء الاصطناعي للتدرّب أمامه</li>
-        </ul>
+  <section class="alt" id="uses">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">لمن هذه المنصة</div>
+        <h2>من فرق الطلاب إلى مهندسي الدفاع.</h2>
       </div>
-    </section>
+      <div class="grid3">
+        <div class="card hl reveal"><h3>فرق المسابقات</h3><p>تدرّب أمام منافسين حقيقيين قبل اختبار الطيران بأشهر. صُممت المنصة على صيغة مسابقة الطائرات المسيّرة المقاتلة.</p></div>
+        <div class="card reveal"><h3>الجامعات والدوريات</h3><p>أدِر مقررات دراسية أو تصفيات داخلية للفرق أو دوريًا كاملًا على منصة واحدة، مع احتساب آلي للنقاط وإعادة عرض المباريات.</p></div>
+        <div class="card reveal"><h3>الشركات</h3><p>اختبر برمجيات القيادة الذاتية متعددة الطائرات في سيناريوهات قياسية قبل المخاطرة بأي طائرة.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="join">
-      <div class="split">
-        <h2>انضم إلى الدوري الأول</h2>
-        <div>
-          <p>يبدأ في يناير 2027 دوري تدريبي افتراضي مجاني لفرق الطائرات المسيّرة الجامعية. تستخدم الفرق برمجيات القيادة الذاتية الخاصة بها، أو تبدأ من فريق البداية الجاهز. يستغرق التسجيل دقيقتين بحساب GitHub.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=register-team.yml">سجّل فريقك</a>
-          </div>
-          <p class="note" style="margin-top:22px"><span dir="ltr">UAV Arena</span> مشروع مستقل مستوحى من صيغة مسابقة الطائرات المسيّرة المقاتلة (Savaşan İHA)، ولا يرتبط بمهرجان TEKNOFEST أو منظميه ولا يحظى بتأييدهم.</p>
-        </div>
+  <section id="lessons">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">ملاحظات ميدانية</div>
+        <h2>ما تعلّمناه من المباريات التجريبية.</h2>
       </div>
-    </section>
-  </main>
-</div>
+      <div class="lessons">
+        <blockquote class="reveal"><strong>تجنّب التصادم قبل التكتيك.</strong><p>اصطدمت طائرتان تعملان بالشيفرة نفسها بعد 24 ثانية من الإقلاع.</p></blockquote>
+        <blockquote class="reveal"><strong>صوّب إلى ما بعد الهدف.</strong><p>فشل الانقضاض الموجَّه في كل محاولة حتى نُقلت نقطة التصويب إلى ما بعد منصة QR، فقرأ كل فريق الرمز من أول انقضاض.</p></blockquote>
+        <blockquote class="reveal"><strong>باعِد بين أوقات الهبوط.</strong><p>التقت طائرتان عادتا في اللحظة نفسها على مسار الاقتراب النهائي.</p></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="companies">
+    <div class="wrap company">
+      <div class="reveal">
+        <div class="eyebrow">للشركات</div>
+        <h2 style="font-size:clamp(1.9rem,3.2vw,2.7rem)">اختبر السرب قبل أن تُطيّره.</h2>
+        <p style="color:var(--muted);font-size:1.1rem;margin-top:16px">اختبار عدة طائرات ذاتية القيادة معًا على عتاد حقيقي بطيء ومكلف ومحفوف بالمخاطر. تشغّل <span dir="ltr">UAV Arena</span> برنامج الطيار الآلي نفسه في مجال جوي افتراضي مشترك، مع احتساب آلي للنقاط وسجلات كاملة لكل رحلة.</p>
+        <div class="actions"><a class="btn primary" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=company-inquiry.yml">استفسر عن مشروع تجريبي <span class="arrow">→</span></a></div>
+      </div>
+      <ul class="reveal">
+        <li><strong>اختبر برمجيات القيادة الذاتية</strong>في سيناريوهات قياسية متعددة الطائرات قبل اختبار الطيران</li>
+        <li><strong>نظّم مسابقة توظيف</strong>للمتدربين والخريجين الجدد، تحت علامتك التجارية</li>
+        <li><strong>درّب المهندسين الجدد</strong>على MAVLink وArduPilot وعمليات الطائرات المتعددة دون عتاد</li>
+        <li><strong>شغّلها على شبكتك الخاصة</strong>بنماذج طائراتك وسيناريوهاتك المغلقة (قيد التطوير)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <img src="../assets/media/arena-overview.jpg" alt="" loading="lazy">
+    <div class="wrap reveal">
+      <div class="eyebrow">يناير 2027</div>
+      <h2>انضم إلى الدوري الأول.</h2>
+      <p>دوري تدريبي افتراضي مجاني لفرق الطائرات المسيّرة الجامعية. استخدم برمجيات القيادة الذاتية الخاصة بك، أو ابدأ من فريق البداية الجاهز. يستغرق التسجيل دقيقتين بحساب GitHub.</p>
+      <div class="actions"><a class="btn primary" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=register-team.yml">سجّل فريقك <span class="arrow">→</span></a></div>
+      <p class="note"><span dir="ltr">UAV Arena</span> مشروع مستقل مستوحى من صيغة مسابقة الطائرات المسيّرة المقاتلة (Savaşan İHA)، ولا يرتبط بمهرجان TEKNOFEST أو منظميه ولا يحظى بتأييدهم.</p>
+    </div>
+  </section>
+</main>
+
 <footer><div class="wrap"><span>© 2026 <span dir="ltr">UAV Arena</span>. من تطوير عمرو عبد الباري</span><nav class="langs" aria-label="اللغة"><a href="../" hreflang="en" lang="en" dir="ltr">English</a><a href="../tr/" hreflang="tr" lang="tr" dir="ltr">Türkçe</a><span lang="ar" dir="rtl" aria-current="page">العربية</span></nav></div></footer>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
