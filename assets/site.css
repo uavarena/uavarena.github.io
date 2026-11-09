@@ -149,3 +149,11 @@ footer { border-top: 2px solid var(--ink); background: var(--paper); padding: 26
   [dir="rtl"] .bar { align-items: flex-start; }
   [dir="rtl"] .bar nav a { margin: 0 0 0 14px; }
 }
+
+/* footer language switcher */
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; }
+footer .langs { display: flex; gap: 18px; font-size: var(--step-0); }
+footer .langs a { color: var(--ink-soft); text-decoration: none; }
+footer .langs a:hover { color: var(--magenta); }
+footer .langs [aria-current] { color: var(--ink); font-weight: 600; border-bottom: 2px solid var(--magenta); }
+:lang(ar) footer .langs span[lang="ar"], footer .langs [lang="ar"] { font-family: "IBM Plex Sans Arabic", "Barlow", sans-serif; }
