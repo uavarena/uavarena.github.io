@@ -7,8 +7,8 @@
 <meta name="description" content="UAV Arena, otonom sabit kanatlı İHA'ların gerçek ArduPilot otopilotlarıyla uçtuğu ve otomatik bir hakemin kilitlenmeleri, QR dalışını, uçuşa yasak bölgeleri ve inişi puanladığı sanal bir yarışma platformudur.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap&subset=latin-ext" rel="stylesheet">
-<link rel="stylesheet" href="../assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/v2.css">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="en" href="https://uavarena.github.io/">
 <link rel="alternate" hreflang="tr" href="https://uavarena.github.io/tr/">
@@ -16,171 +16,219 @@
 <link rel="alternate" hreflang="x-default" href="https://uavarena.github.io/">
 <meta property="og:title" content="UAV Arena — otonom İHA'lar gerçek otopilotlarla yarışıyor">
 <meta property="og:description" content="Otonom sabit kanatlı İHA'ların gerçek ArduPilot otopilotlarıyla uçtuğu, otomatik bir hakemin her kilitlenmeyi, dalışı ve inişi puanladığı sanal bir arena. Üniversite takımları için ücretsiz antrenman ligi Ocak 2027'de başlıyor.">
-<meta property="og:image" content="https://uavarena.github.io/assets/social-card.png">
+<meta property="og:image" content="https://uavarena.github.io/assets/media/hero-poster.jpg">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
-<div class="wrap">
-  <header class="bar">
-    <a href="./">UAV Arena</a>
-    <nav aria-label="Ana menü">
-      <a href="#match">Bir maç nasıl işler</a>
-      <a href="#uses">Kimler için</a>
-      <a href="#companies">Şirketler için</a>
-      <a href="#join">Katıl</a>
-      <a href="../" hreflang="en" lang="en">English</a>
-      <a href="../ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a>
-    </nav>
-  </header>
 
-  <main>
-    <div class="hero">
-      <div>
-        <h1>Otonom İHA'lar, gerçek otopilotlar, tek arena.</h1>
-        <p class="lede">UAV Arena, her uçağın gerçek ArduPlane otopilot yazılımıyla çalıştığı ve tıpkı gerçek bir gövdede olduğu gibi MAVLink üzerinden komut aldığı sanal bir yarışmadır. Otomatik hakem her kilitlenmeyi, dalışı ve inişi canlı olarak puanlar. Takımlar otonomi kodlarını, bir uçağı riske atmadan gerçek rakiplere karşı test eder.</p>
-        <div class="actions">
-          <a class="btn primary" href="#join">Ocak ligine katıl</a>
-          <a class="btn" href="#match">Bir maç nasıl işler</a>
-        </div>
-      </div>
-      <div class="chart">
-        <svg viewBox="0 0 600 460" role="img" aria-label="Arena haritası: bir uçuş sınırı, iki uçuşa yasak bölge, bir QR hedefi, bir iniş alanı ve biri diğerine kilitlenirken daire çizen iki uçak">
-          <defs>
-            <pattern id="hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <line x1="0" y1="0" x2="0" y2="10" stroke="#a8306a" stroke-width="2" stroke-opacity="0.5"/>
-            </pattern>
-          </defs>
-          <!-- uçuş sınırı -->
-          <rect x="40" y="30" width="520" height="400" rx="6" fill="#eef2ec" stroke="#a8306a" stroke-width="3" stroke-dasharray="14 8"/>
-          <!-- uçuşa yasak bölgeler -->
-          <circle cx="140" cy="120" r="48" fill="url(#hatch)" stroke="#a8306a" stroke-width="2"/>
-          <polygon points="440,320 520,300 530,390 450,400" fill="url(#hatch)" stroke="#a8306a" stroke-width="2"/>
-          <!-- iniş alanı -->
-          <rect x="90" y="360" width="150" height="34" rx="3" fill="#2f5d9e" fill-opacity="0.12" stroke="#2f5d9e" stroke-width="2"/>
-          <line x1="105" y1="377" x2="225" y2="377" stroke="#2f5d9e" stroke-width="2" stroke-dasharray="10 8"/>
-          <!-- QR hedefi -->
-          <g transform="translate(470 70)">
-            <rect width="44" height="44" fill="#fff" stroke="#1c2b4a" stroke-width="2"/>
-            <rect x="5" y="5" width="12" height="12" fill="#1c2b4a"/><rect x="27" y="5" width="12" height="12" fill="#1c2b4a"/>
-            <rect x="5" y="27" width="12" height="12" fill="#1c2b4a"/><rect x="24" y="24" width="6" height="6" fill="#1c2b4a"/><rect x="32" y="32" width="7" height="7" fill="#1c2b4a"/>
-          </g>
-          <!-- yörünge -->
-          <circle cx="300" cy="230" r="120" fill="none" stroke="#1c2b4a" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="3 6"/>
-          <!-- iki uçak birlikte döner; arkadaki avcı kilitlenir -->
-          <g class="orbit">
-            <g class="lock"><polygon points="215,145 314,98 300,130" fill="#a8306a" fill-opacity="0.2" stroke="#a8306a" stroke-width="1.5"/></g>
-            <g transform="translate(300 110) rotate(90)"><path d="M0 -14 L4 -2 L16 4 L4 4 L3 12 L7 15 L-7 15 L-3 12 L-4 4 L-16 4 L-4 -2 Z" fill="#2f5d9e"/></g>
-            <g transform="translate(215 145) rotate(45)"><path d="M0 -14 L4 -2 L16 4 L4 4 L3 12 L7 15 L-7 15 L-3 12 L-4 4 L-16 4 L-4 -2 Z" fill="#1c2b4a"/></g>
-          </g>
-          <g font-family="Barlow Semi Condensed, sans-serif" font-size="15" font-weight="600">
-            <text x="80" y="186" fill="#a8306a">Uçuşa yasak bölge</text>
-            <text x="446" y="134" fill="#1c2b4a">QR hedefi</text>
-            <text x="92" y="352" fill="#2f5d9e">İniş alanı</text>
-            <text x="404" y="56" fill="#a8306a">Uçuş sınırı</text>
-          </g>
-        </svg>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <svg viewBox="-18 -18 36 36" aria-hidden="true"><circle r="16" fill="none" stroke="#4fd1e8" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M0 -12 L3.5 -1.5 L13 3.5 L3.5 3.5 L2.5 10 L6 12.5 L-6 12.5 L-2.5 10 L-3.5 3.5 L-13 3.5 L-3.5 -1.5 Z" fill="#fff"/></svg>
+      UAV Arena
+    </a>
+    <nav aria-label="Ana menü">
+      <a class="hide-m" href="#match">Nasıl işler</a>
+      <a class="hide-m" href="#footage">Görüntüler</a>
+      <a class="hide-m" href="#companies">Şirketler için</a>
+      <a class="cta" href="#join">Lige katıl</a>
+      <span class="lang-mini"><a href="../" hreflang="en" lang="en">EN</a><span aria-current="page">TR</span><a href="../ar/" hreflang="ar" lang="ar">عربي</a></span>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <img class="poster" src="../assets/media/hero-poster.jpg" alt="">
+    <video autoplay muted loop playsinline preload="auto" poster="../assets/media/hero-poster.jpg" aria-hidden="true">
+      <source src="../assets/media/hero.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <div class="eyebrow">Sanal İHA it dalaşı arenası</div>
+      <h1>Otonom İHA'lar. <em>Gerçek otopilotlar.</em> Tek arena.</h1>
+      <p class="lede">Her uçak gerçek ArduPlane otopilot yazılımıyla çalışır ve tıpkı gerçek bir gövdede olduğu gibi MAVLink üzerinden komut alır. Otomatik hakem her kilitlenmeyi, dalışı ve inişi canlı olarak puanlar. Otonomi kodunuzu bir uçağı riske atmadan gerçek rakiplere karşı test edin.</p>
+      <div class="actions">
+        <a class="btn primary" href="#join">Ocak ligine katıl <span class="arrow">→</span></a>
+        <a class="btn" href="#footage">Görüntüleri izle</a>
       </div>
     </div>
+    <div class="footage-tag"><span class="dot"></span>GERÇEK MAÇ GÖRÜNTÜSÜ · 4 TAKIM · CANLI HAKEM</div>
+  </div>
 
-    <section class="block" id="match">
-      <h2>Bir maç nasıl işler</h2>
-      <ol class="sequence">
-        <li><h3>Kalkış</h3><p>Her takımın uçağı kalkış süresi içinde havalanır; uçağı takımın kendi kodu ya da yer kontrol istasyonuyla bir pilot uçurur.</p></li>
-        <li><h3>Kilitlenme</h3><p>Rakibi 4 saniye boyunca kameranızın vuruş alanında tutun. Hakem her kilitlenme iddiasını gerçek konumlarla karşılaştırarak doğrular.</p></li>
-        <li><h3>QR koduna dalış</h3><p>Dalış görevini tamamlamak için yerdeki hedefe dalın ve QR kodunu okuyun.</p></li>
-        <li><h3>İniş</h3><p>Süre dolmadan iniş alanına inin. Uçuş sınırı ihlalleri, uçuşa yasak bölgeler ve güvensiz uçuş puan kaybettirir.</p></li>
-      </ol>
-    </section>
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b>100<small>takım</small></b><span>tek maçta, arena sunucusunda ölçüldü</span></div>
+      <div class="stat"><b>4<small>sn</small></b><span>geçerli bir kilitlenme için hedefi tutma süresi</span></div>
+      <div class="stat"><b>2</b><span>desteklenen otopilot: ArduPilot ve PX4</span></div>
+      <div class="stat"><b>Ocak<small>2027</small></b><span>üniversite takımları için ilk ücretsiz lig</span></div>
+    </div>
+  </div>
 
-    <section class="block">
-      <div class="split">
-        <h2>Altyapı</h2>
-        <ul class="plain">
-          <li>Her uçak gerçek bir ArduPlane otopilotudur (ArduPilot SITL) ve MAVLink üzerinden komut alır</li>
-          <li>Otomatik hakem kilitlenmeleri doğrular: kamera izdüşümü, vuruş alanı, tutma süresi ve kesintiler</li>
-          <li>Uçuş sınırı, uçuşa yasak bölgeler, güvensiz yakınlık, telemetri kaybı ve yanlış iddialar için canlı cezalar</li>
-          <li>Gazebo'da 3B görünüm; ayrıca skor tablosu ve hakem konsolu olan bir web paneli</li>
-          <li>Takımlar ağ üzerinden kendi dizüstü bilgisayarlarından bağlanır ya da Mission Planner ile elle uçar</li>
-          <li>Kurallar tek bir yapılandırma dosyasında tutulur; formatlar kod değiştirmeden değiştirilebilir</li>
+  <section id="match">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Bir maç nasıl işler</div>
+        <h2>On beş dakika. Dört görev. Hakem affetmez.</h2>
+        <p>Aşağıdaki puanlar standart kurallardandır. Tüm kurallar tek bir yapılandırma dosyasında tutulur; ligler formatı kod değiştirmeden değiştirebilir.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><h3>Kalkış</h3><p>Her uçak kalkış süresi içinde havalanır; uçağı takımın kendi kodu ya da 3B kokpitten bir pilot uçurur.</p></div>
+        <div class="step reveal"><span class="pts">+10</span><h3>Kilitlenme</h3><p>Rakibi 4 saniye boyunca kameranızın vuruş alanında tutun. Kilitlenilen takım 2 puan kaybeder.</p></div>
+        <div class="step reveal"><span class="pts">+25</span><h3>QR dalışı</h3><p>Yerdeki hedefe dalın ve QR kodunu kamera görüntüsünden okuyun.</p></div>
+        <div class="step reveal"><span class="pts">+5</span><h3>İniş</h3><p>Süre dolmadan iniş alanına güvenle inin. Uçuş sınırı ihlalleri, uçuşa yasak bölgeler ve güvensiz uçuş puan kaybettirir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="referee">
+    <div class="wrap feature">
+      <div class="media reveal">
+        <video autoplay muted loop playsinline preload="metadata" poster="../assets/media/lockon-poster.jpg" aria-label="Kilitlenme kanıt klibi: Team Sahin, Team Atmaca'yı sarı vuruş alanında tutuyor; hakem geçerli sayıyor">
+          <source src="../assets/media/lockon.mp4" type="video/mp4">
+        </video>
+        <span class="cap">HAKEM KANITI · T3 → T4 · GEÇERLİ +10</span>
+      </div>
+      <div class="reveal">
+        <div class="eyebrow">Otomatik hakem</div>
+        <h2>Her kilitlenme gerçek konumlarla doğrulanır.</h2>
+        <p>Her uçağın ön kamerası gerçek görüntüler olarak işlenir ve yalnızca kendi takımına aktarılır. Bir takım kilitlenme iddia ettiğinde hakem kamera izdüşümünü, vuruş alanını ve tutma süresini yeniden hesaplar ve bunun gibi kısa bir kanıt klibi saklar.</p>
+        <ul class="checks">
+          <li>Kamera izdüşümü, vuruş alanı, tutma süresi ve kesintiler doğrulanır</li>
+          <li>Uçuş sınırı, uçuşa yasak bölgeler, güvensiz yakınlık ve yanlış iddialar için canlı cezalar</li>
+          <li>Her telemetri mesajı, iddia ve karar tekrar izleme için kaydedilir</li>
         </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="block">
-      <div class="split">
-        <h2>Test maçlarından öğrendiklerimiz</h2>
-        <div class="lessons">
-          <blockquote><strong>Önce çarpışmayı önleyin, sonra taktik.</strong>Aynı kodu çalıştıran iki uçak kalkıştan 24 saniye sonra çarpıştı.</blockquote>
-          <blockquote><strong>Hedefin ötesine nişan alın.</strong>Güdümlü dalış, nişan noktası QR hedefinin ötesine taşınana kadar her denemede başarısız oldu; sonra her takım kodu ilk dalışta okudu.</blockquote>
-          <blockquote><strong>İnişleri sıraya koyun.</strong>Aynı anda dönen iki uçak son yaklaşmada karşılaştı.</blockquote>
-        </div>
+  <section id="footage">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Görüntüler</div>
+        <h2>Maçı her açıdan izleyin.</h2>
+        <p>Bu sayfadaki tüm görüntüler gerçek UAV Arena maçlarından alınmıştır. Hiçbiri tanıtım için sahnelenmedi ya da özel olarak hazırlanmadı.</p>
       </div>
-    </section>
+      <div class="gallery">
+        <figure class="wide reveal">
+          <div class="media"><video autoplay muted loop playsinline preload="metadata" poster="../assets/media/chase-poster.jpg"><source src="../assets/media/chase.mp4" type="video/mp4"></video><span class="cap">3B GÖRÜNÜM · TAKİP KAMERASI</span></div>
+          <figcaption><b>İzleyici 3B görünümü.</b> Misafirler tek bir bağlantıyla, telefondan ya da dizüstünden istedikleri uçağı takip eder.</figcaption>
+        </figure>
+        <figure class="narrow reveal">
+          <div class="media"><img src="../assets/media/onboard-camera.jpg" alt="Bir uçağın uçak kamerası görüntüsü: gökyüzü, ufuk ve yerde QR dalış bölgesinin kırmızı halkası" loading="lazy"><span class="cap">UÇAK KAMERASI</span></div>
+          <figcaption><b>Uçak kamerası.</b> Takımın tespit algoritmasının gerçekten gördüğü görüntü.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="media"><img src="../assets/media/arena-overview.jpg" alt="Arenanın 3B genel görünümü: uçuş sınırı, iki kırmızı uçuşa yasak bölge silindiri, pist ve dört uçak" loading="lazy"><span class="cap">ARENA GENEL GÖRÜNÜMÜ</span></div>
+          <figcaption><b>Arena.</b> Uçuş sınırı, uçuşa yasak bölgeler, QR hedefi ve iniş alanı.</figcaption>
+        </figure>
+        <figure class="reveal">
+          <div class="media"><img src="../assets/media/dashboard.jpg" alt="Web paneli: dört uçaklı arena haritası, skor tablosu ve olay kaydı" loading="lazy"><span class="cap">HAKEM PANELİ</span></div>
+          <figcaption><b>Panel.</b> Canlı harita, skor tablosu ve hakemin her kararı.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="uses">
-      <h2>Kimler için</h2>
-      <div class="uses">
-        <div class="lead">
-          <h3>Yarışma takımları</h3>
-          <p>Uçuş testinden aylar önce gerçek rakiplere karşı antrenman yapın. Savaşan İHA yarışma formatı temel alınarak geliştirildi.</p>
-        </div>
-        <div>
-          <h3>Üniversiteler ve ligler</h3>
-          <p>Dersleri, takım içi seçmeleri ya da tam bir ligi otomatik puanlama ve tekrar izleme ile tek bir platformda yürütün.</p>
-        </div>
-        <div>
-          <h3>Şirketler</h3>
-          <p>Çok uçaklı otonomi yazılımınızı bir gövdeyi riske atmadan önce standart senaryolarla test edin.</p>
-        </div>
+  <section class="alt">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Altyapı</div>
+        <h2>Gerçek uçağı uçuran yazılımın aynısı.</h2>
       </div>
-    </section>
+      <div class="grid3">
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/></svg></div><h3>Gerçek otopilotlar</h3><p>Her uçak için ArduPilot SITL, yanında PX4; komutlar MAVLink üzerinden.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Gerçek kamera görüntüleri</h3><p>Her uçak için gerçek görüntüler; her takıma kendi tespit algoritması için MJPEG olarak aktarılır.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 16V9m5 7V5m5 11v-4"/></svg></div><h3>Tekrar izleme</h3><p>Her maç 3B olarak, zaman çizelgesi, olaylar ve 1–32× hızla yeniden izlenir.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Adil oyun</h3><p>Takım başına erişim anahtarları ve yasak komutları engelleyip her şeyi kaydeden bir otopilot geçidi.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>3B kokpit</h3><p>Tarayıcıdan klavye ya da oyun kumandasıyla veya Mission Planner ile elle uçun.</p></div>
+        <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><h3>Ölçeklenebilir</h3><p>Tek maçta 100 takım, her takıma tam 5 Hz telemetri; ölçüldü.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="companies">
-      <div class="split">
-        <h2>Şirketler için</h2>
-        <div>
-          <p>Birden fazla otonom uçağı gerçek donanımla birlikte test etmek yavaş, pahalı ve risklidir. UAV Arena aynı otopilot yazılımını ortak bir sanal hava sahasında, otomatik puanlama ve her uçuşun tam kaydıyla çalıştırır.</p>
-          <ul class="plain">
-            <li><strong>Otonomi kodunuzu test edin:</strong> uçuş testinden önce standart çok uçaklı senaryolara karşı</li>
-            <li><strong>İşe alım yarışması düzenleyin:</strong> stajyerler ve yeni mezunlar için, kendi markanızla</li>
-            <li><strong>Yeni mühendisleri eğitin:</strong> donanım olmadan MAVLink, ArduPilot ve çok uçaklı operasyonlar üzerine</li>
-            <li><strong>Kendi ağınızda çalıştırın:</strong> kendi uçak modelleriniz ve kapalı senaryolarınızla (geliştirme aşamasında)</li>
-          </ul>
-          <div class="actions">
-            <a class="btn" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=company-inquiry.yml">Pilot proje hakkında bilgi alın</a>
-          </div>
-        </div>
+  <section id="modules">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Sezon modülleri</div>
+        <h2>Yarışma formatının ötesinde.</h2>
+        <p>Havada elektronik harp isteyen ligler için isteğe bağlı modüller. Her biri sezona göre açılıp kapatılabilir.</p>
       </div>
-    </section>
+      <div class="modules reveal">
+        <div><h3>Yer radarı</h3><p>Gürültü, kargaşa yankısı, radar ufku ve takipçi; izler takımlara sunulur.</p></div>
+        <div><h3>Gizli SAM mevzileri</h3><p>Takip, kilit, atış. Takımlar hayatta kalmak için bir radar ikaz alıcısı kullanır.</p></div>
+        <div><h3>GPS karıştırma ve aldatma</h3><p>Konumun yanıltıcı olduğu bölgeler; bunu fark etmek takımın işi.</p></div>
+        <div><h3>Haberleşme karıştırma</h3><p>Takım başına gecikme, kayıp ve dalgalanma; bağlantıda karıştırma bölgeleri.</p></div>
+        <div><h3>Öz koruma karıştırıcısı</h3><p>Bütçesi ve bekleme süresi olan, akıllıca kullanılması gereken bir ECM.</p></div>
+        <div><h3>Savaş sisi</h3><p>Rakiplerin konumu bedava verilmez: onları radar ve kamerayla bulun.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="coming">
-      <div class="split">
-        <h2>Yakında</h2>
-        <ul class="plain">
-          <li><strong>Ocak 2027</strong> — üniversite takımları için ücretsiz antrenman ligi</li>
-          <li><strong>İlkbahar 2027</strong> — isteğe bağlı sezon modülleri olarak takipli yer radarı, GPS karıştırma bölgeleri ve zayıflatılmış telsiz bağlantısı</li>
-          <li><strong>Yaz 2027</strong> — sanal arenada uçan gerçek bir uçak ve karşı antrenman yapılabilecek bir yapay zekâ rakip</li>
-        </ul>
+  <section class="alt" id="uses">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Kimler için</div>
+        <h2>Öğrenci takımlarından savunma mühendislerine.</h2>
       </div>
-    </section>
+      <div class="grid3">
+        <div class="card hl reveal"><h3>Yarışma takımları</h3><p>Uçuş testinden aylar önce gerçek rakiplere karşı antrenman yapın. Savaşan İHA yarışma formatı temel alınarak geliştirildi.</p></div>
+        <div class="card reveal"><h3>Üniversiteler ve ligler</h3><p>Dersleri, takım içi seçmeleri ya da tam bir ligi otomatik puanlama ve tekrar izleme ile tek platformda yürütün.</p></div>
+        <div class="card reveal"><h3>Şirketler</h3><p>Çok uçaklı otonomi yazılımınızı bir gövdeyi riske atmadan önce standart senaryolarla test edin.</p></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="block" id="join">
-      <div class="split">
-        <h2>İlk lige katılın</h2>
-        <div>
-          <p>Üniversite İHA takımları için ücretsiz bir sanal antrenman ligi Ocak 2027'de başlıyor. Takımlar kendi otonomi kodlarını kullanabilir ya da hazır başlangıç takımından yola çıkabilir. Kayıt, bir GitHub hesabıyla iki dakika sürer.</p>
-          <div class="actions">
-            <a class="btn primary" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=register-team.yml">Takımını kaydet</a>
-          </div>
-          <p class="note" style="margin-top:12px">Kayıt formu İngilizcedir; formu Türkçe de doldurabilirsiniz.</p>
-          <p class="note" style="margin-top:22px">UAV Arena, Savaşan İHA yarışma formatından esinlenen bağımsız bir projedir. TEKNOFEST veya düzenleyicileriyle bağlantılı değildir ve onlar tarafından desteklenmemektedir.</p>
-        </div>
+  <section id="lessons">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Saha notları</div>
+        <h2>Test maçlarından öğrendiklerimiz.</h2>
       </div>
-    </section>
-  </main>
-</div>
+      <div class="lessons">
+        <blockquote class="reveal"><strong>Önce çarpışmayı önleyin, sonra taktik.</strong><p>Aynı kodu çalıştıran iki uçak kalkıştan 24 saniye sonra çarpıştı.</p></blockquote>
+        <blockquote class="reveal"><strong>Hedefin ötesine nişan alın.</strong><p>Güdümlü dalış, nişan noktası QR hedefinin ötesine taşınana kadar her denemede başarısız oldu; sonra her takım kodu ilk dalışta okudu.</p></blockquote>
+        <blockquote class="reveal"><strong>İnişleri sıraya koyun.</strong><p>Aynı anda dönen iki uçak son yaklaşmada karşılaştı.</p></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="companies">
+    <div class="wrap company">
+      <div class="reveal">
+        <div class="eyebrow">Şirketler için</div>
+        <h2 style="font-size:clamp(1.9rem,3.2vw,2.7rem)">Sürüyü uçurmadan önce test edin.</h2>
+        <p style="color:var(--muted);font-size:1.1rem;margin-top:16px">Birden fazla otonom uçağı gerçek donanımla birlikte test etmek yavaş, pahalı ve risklidir. UAV Arena aynı otopilot yazılımını ortak bir sanal hava sahasında, otomatik puanlama ve her uçuşun tam kaydıyla çalıştırır.</p>
+        <div class="actions"><a class="btn primary" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=company-inquiry.yml">Pilot proje hakkında bilgi alın <span class="arrow">→</span></a></div>
+      </div>
+      <ul class="reveal">
+        <li><strong>Otonomi kodunuzu test edin</strong>uçuş testinden önce standart çok uçaklı senaryolara karşı</li>
+        <li><strong>İşe alım yarışması düzenleyin</strong>stajyerler ve yeni mezunlar için, kendi markanızla</li>
+        <li><strong>Yeni mühendisleri eğitin</strong>donanım olmadan MAVLink, ArduPilot ve çok uçaklı operasyonlar üzerine</li>
+        <li><strong>Kendi ağınızda çalıştırın</strong>kendi uçak modelleriniz ve kapalı senaryolarınızla (geliştirme aşamasında)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="join" id="join">
+    <img src="../assets/media/arena-overview.jpg" alt="" loading="lazy">
+    <div class="wrap reveal">
+      <div class="eyebrow">Ocak 2027</div>
+      <h2>İlk lige katılın.</h2>
+      <p>Üniversite İHA takımları için ücretsiz bir sanal antrenman ligi. Kendi otonomi kodunuzu kullanın ya da hazır başlangıç takımından yola çıkın. Kayıt, bir GitHub hesabıyla iki dakika sürer.</p>
+      <div class="actions"><a class="btn primary" href="https://github.com/uavarena/uavarena.github.io/issues/new?template=register-team.yml">Takımını kaydet <span class="arrow">→</span></a></div>
+      <p class="note">Kayıt formu İngilizcedir; formu Türkçe de doldurabilirsiniz.</p>
+      <p class="note" style="margin-top:8px">UAV Arena, Savaşan İHA yarışma formatından esinlenen bağımsız bir projedir. TEKNOFEST veya düzenleyicileriyle bağlantılı değildir ve onlar tarafından desteklenmemektedir.</p>
+    </div>
+  </section>
+</main>
+
 <footer><div class="wrap"><span>© 2026 UAV Arena. Geliştiren: Amr Abdelbari</span><nav class="langs" aria-label="Dil"><a href="../" hreflang="en" lang="en" dir="ltr">English</a><span lang="tr" dir="ltr" aria-current="page">Türkçe</span><a href="../ar/" hreflang="ar" lang="ar" dir="rtl">العربية</a></nav></div></footer>
+
+<script>
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
